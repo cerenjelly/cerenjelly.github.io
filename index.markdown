@@ -1,6 +1,20 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: post
+title:  "Gallery"
+date:   2022-03-27 12:13:49 +0100
+categories: jekyll update
 ---
+
+<!-- 
+![](/photos/1.jpeg)
+
+![](/photos/2.jpeg)
+
+![](/photos/3.jpeg) 
+-->
+
+{% for image in site.static_files %}
+ {% if image.path contains 'photos/' %}
+  ![image]({{ image.path }} 'image')
+ {% endif %}
+{% endfor %}
